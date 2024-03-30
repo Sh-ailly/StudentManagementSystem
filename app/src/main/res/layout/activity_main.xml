@@ -43,7 +43,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
-        style="@style/custom_card_view"
+        style="@style/custom_card_view_style"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
-                android:background="@color/edit_text_background"
+                android:background="@drawable/edit_text_background"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
                 android:ems="10"
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
-                android:background="@color/edit_text_background"
+                android:background="@drawable/edit_text_background"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:ems="10"
@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="Sign Up"
+                    android:text=" Sign Up"
                     android:textColor="@color/app_theme"
                     android:textStyle="bold" />
             </LinearLayout>
