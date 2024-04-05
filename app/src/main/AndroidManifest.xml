@@ -12,6 +12,20 @@
         android:theme="@style/Theme.StudentManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".ui.main.Contact_Admin_Page"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Sidepanel"
+            android:exported="false"
+            android:label="@string/title_activity_sidepanel"
+            android:theme="@style/Theme.StudentManagementSystem.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

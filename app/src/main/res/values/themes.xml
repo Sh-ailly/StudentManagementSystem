@@ -17,6 +17,7 @@
     <style name="custom_card_view_style" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/custom_card_view</item>
     </style>
+
     <style name="custom_card_view" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopRight">48dp</item>
@@ -24,4 +25,13 @@
         <item name="cornerSizeBottomLeft">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
+
+    <style name="Theme.StudentManagementSystem.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.StudentManagementSystem.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.StudentManagementSystem.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
