@@ -12,13 +12,13 @@ import android.view.View;
 import android.widget.*;
 
 public class Contact_Admin_Page extends AppCompatActivity {
-ImageButton back;
+ImageView back;
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_admin_page);
-        back=(ImageButton)findViewById(R.id.backbuttonimage);
+        back=(ImageView)findViewById(R.id.backbuttonimage);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
