@@ -139,7 +139,7 @@
                 <EditText
                     android:id="@+id/rollno"
                     android:layout_width="170dp"
-                    android:layout_height="45dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="18dp"
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="10dp"
@@ -174,7 +174,7 @@
                 <EditText
                     android:id="@+id/course"
                     android:layout_width="170dp"
-                    android:layout_height="45dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="220dp"
                     android:layout_marginLeft="220dp"
                     android:layout_marginTop="10dp"
@@ -209,7 +209,7 @@
                 <EditText
                     android:id="@+id/phoneno"
                     android:layout_width="170dp"
-                    android:layout_height="45dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="18dp"
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="10dp"
