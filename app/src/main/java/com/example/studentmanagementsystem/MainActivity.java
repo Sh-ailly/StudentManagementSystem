@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,11 +14,22 @@ import com.example.studentmanagementsystem.ui.main.Contact_Admin_Page;
 
 import org.w3c.dom.Text;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MainActivity extends AppCompatActivity {
+    ConnectionClass connectionClass;
+    Connection conn;
+    ResultSet rs;
+    String name, str;
     Button login;
     TextView contact_admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        connectionClass=new ConnectionClass();
+        conn=connectionClass.CONN();
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -27,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,Dashboard.class);
-                startActivity(intent);
-            }
+                if (conn != null) {
+                    Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                    startActivity(intent);
+                } else {
+                    Log.e("ERROR", "Failed to connect to database");
+                }            }
         });
         contact_admin=(TextView)findViewById(R.id.textView6);
         contact_admin.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 }
