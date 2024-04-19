@@ -11,6 +11,7 @@ public class ConnectionClass {
     protected static String port = "3306";
     protected static String username = "root";
     protected static String password = "password";
+    private Exception lastException;
 
     public Connection CONN() {
         Connection conn = null;
@@ -19,7 +20,7 @@ public class ConnectionClass {
             Class.forName("com.mysql.jdbc.Driver");
 
             // Construct the URL for the database connection
-            String url = "jdbc:mysql://" + hostname + ":" + port + "/" + db;
+            String url = "jdbc:mysql://localhost:3306/SMS";
 
             Log.d("CONNECTION_INFO", "Connecting to database: " + url);
 
@@ -31,7 +32,12 @@ public class ConnectionClass {
             Log.e("ERROR", "MySQL JDBC Driver not found", e);
         } catch (SQLException e) {
             Log.e("ERROR", "Failed to connect to database: " + e.getMessage(), e);
+            lastException = e;
+
         }
         return conn;
+    }
+    public Exception getLastException() {
+        return lastException;
     }
 }
