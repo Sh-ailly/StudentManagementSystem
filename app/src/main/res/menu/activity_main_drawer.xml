@@ -6,27 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/profileicon"
             android:title="Profile" />
         <item
             android:id="@+id/nav_assignment"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/assignment_icon"
             android:title="Assignment" />
         <item
             android:id="@+id/nav_grade"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/gradeicon"
             android:title="Grade" />
         <item
             android:id="@+id/nav_attendance"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/attandance"
             android:title="Attendance" />
         <item
             android:id="@+id/nav_fees"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/feesicon"
             android:title="Fees" />
         <item
             android:id="@+id/nav_holidays"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/holiday"
             android:title="Holidays" />
 
     </group>
