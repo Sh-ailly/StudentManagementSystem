@@ -1,12 +1,17 @@
 package com.example.studentmanagementsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 
+import com.example.studentmanagementsystem.ui.main.Contact_Admin_Page;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,6 +25,8 @@ public class Dashboard extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityDashboardBinding binding;
+    Button profile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ public class Dashboard extends AppCompatActivity {
                         .setAnchorView(R.id.fab).show();
             }
         });*/
+     profile = findViewById(R.id.nav_profile);
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -48,6 +57,20 @@ public class Dashboard extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboard);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id= menuItem.getItemId();
+                if(id==R.id.nav_profile)
+                {
+                    Intent intent = new Intent(Dashboard.this, MyprofilepageActivity.class);
+                    startActivity(intent);
+                }
+                return true;
+
+            }
+        });
+       
     }
 
     @Override
@@ -63,4 +86,5 @@ public class Dashboard extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
