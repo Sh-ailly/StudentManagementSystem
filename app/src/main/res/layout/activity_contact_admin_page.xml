@@ -66,7 +66,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/etyourname"
+                        android:id="@+id/editTextTextPersonName"
                         android:layout_width="170dp"
                         android:layout_height="48dp"
                         android:layout_marginStart="18dp"
@@ -102,7 +102,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etyouremail"
+                    android:id="@+id/email"
                     android:layout_width="170dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="220dp"
@@ -136,7 +136,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etrollno"
+                    android:id="@+id/rollno"
                     android:layout_width="170dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="18dp"
@@ -171,7 +171,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etcourse"
+                    android:id="@+id/course"
                     android:layout_width="170dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="220dp"
@@ -206,7 +206,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etphoneno"
+                    android:id="@+id/phoneno"
                     android:layout_width="170dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="18dp"
@@ -241,7 +241,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etmessage"
+                    android:id="@+id/message"
                     android:layout_width="380dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="15dp"
@@ -260,7 +260,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/btnSend"
+            android:id="@+id/button3"
             android:layout_width="150dp"
             android:layout_height="55dp"
             android:layout_marginStart="130dp"
@@ -268,7 +268,7 @@
             android:layout_marginTop="489dp"
             android:background="#01579B"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Send" />
+            android:text="Submit" />
 
     </androidx.cardview.widget.CardView>
 
