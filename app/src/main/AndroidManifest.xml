@@ -12,6 +12,19 @@
         android:theme="@style/Theme.StudentManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".AttendancepageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GradespageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssignmentpageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HolidayspageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.StudentManagementSystem" />
+        <activity
             android:name=".FeeStructurePageActivity"
             android:exported="false" />
         <activity
