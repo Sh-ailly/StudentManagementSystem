@@ -54,10 +54,10 @@
                 android:id="@+id/textView28"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginTop="35dp"
                 android:layout_weight="1"
-                android:text="@string/semester"
+                android:text="@string/textsemester"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -100,14 +100,15 @@
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="250dp"
                 android:layout_marginEnd="120dp"
                 android:background="@color/app_theme"
                 android:text="@string/deposit_fee"
-                android:textColor="@color/white"
+                android:textColor="#FBFCFD"
                 tools:ignore="VisualLintButtonSize" />
         </LinearLayout>
 
