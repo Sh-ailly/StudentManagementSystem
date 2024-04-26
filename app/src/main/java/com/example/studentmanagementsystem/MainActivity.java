@@ -37,14 +37,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //if (conn != null) {
-                    Intent intent = new Intent(MainActivity.this, Dashboard.class);
-                    startActivity(intent);
-                //} else {
-                    // Show a user-friendly message if connection fails
-                    // For example, you can display a Toast
-                   // Log.e("ERROR", "Failed to connect to database");
-                //}
+                Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                startActivity(intent);
+                // } else {
+                //   Log.e("ERROR", "Failed to connect to database");
             }
+            // }
         });
 
         contact_admin = findViewById(R.id.textView6);

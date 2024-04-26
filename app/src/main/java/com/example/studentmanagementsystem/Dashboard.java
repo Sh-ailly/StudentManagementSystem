@@ -44,7 +44,7 @@ public class Dashboard extends AppCompatActivity {
                         .setAnchorView(R.id.fab).show();
             }
         });*/
-     profile = findViewById(R.id.nav_profile);
+        profile = findViewById(R.id.nav_profile);
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -66,11 +66,16 @@ public class Dashboard extends AppCompatActivity {
                     Intent intent = new Intent(Dashboard.this, MyprofilepageActivity.class);
                     startActivity(intent);
                 }
+                else if(id==R.id.nav_fees)
+                {
+                    Intent intent = new Intent(Dashboard.this, FeesStructurepageActivity.class);
+                    startActivity(intent);
+                }
                 return true;
 
             }
         });
-       
+
     }
 
     @Override
