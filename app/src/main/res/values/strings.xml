@@ -61,4 +61,12 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="grades_marks">Grades/Marks</string>
+    <string name="deposit_fee">Deposit Fee</string>
+    <string name="_0_00">0.00</string>
+    <string name="fee_structure">Fee Structure</string>
+    <string name="feebackbtn">TODO</string>
+    <string name="semester">Semester :</string>
+    <string name="_7">7</string>
+    <string name="to_be_paid">To be paid:</string>
 </resources>
