@@ -12,6 +12,9 @@
         android:theme="@style/Theme.StudentManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".FeeStructurePageActivity"
+            android:exported="false" />
+        <activity
             android:name=".MyprofilepageActivity"
             android:exported="false" />
         <activity
