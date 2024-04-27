@@ -10,14 +10,20 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.studentmanagementsystem.ui.main.Contact_Admin_Page;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     ConnectionClass connectionClass;
-    Connection conn;
+    Connection con;
+    ResultSet rs;
+    String str;
     Button login;
     TextView contact_admin;
 
@@ -29,20 +35,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        connectionClass = new ConnectionClass();
-        conn = connectionClass.CONN(); // Establish the database connection
+        connectionClass = new ConnectionClass(); // Assuming this class handles database connections
 
         login = findViewById(R.id.button);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (conn != null) {
-                Intent intent = new Intent(MainActivity.this, Dashboard.class);
-                startActivity(intent);
-                // } else {
-                //   Log.e("ERROR", "Failed to connect to database");
+                connect();
             }
-            // }
         });
 
         contact_admin = findViewById(R.id.textView6);
@@ -55,16 +55,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Close the database connection when the activity is destroyed
-        if (conn != null) {
+    public void connect() {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(() -> {
             try {
-                conn.close();
+                con = connectionClass.CONN(); // Assuming this method establishes the database connection
+
+                if (con == null) {
+                    str = "Error in connection";
+                } else {
+                    str = "Connection success";
+                    // Start the Dashboard activity upon successful connection
+                    Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                    startActivity(intent);
+                }
             } catch (Exception e) {
-                Log.e("ERROR", "Error closing database connection: " + e.getMessage());
+                // Log the exception for debugging purposes
+                Log.e("Database Connection", "Error connecting to database", e);
+                str = "Error in connection";
             }
-        }
+            runOnUiThread(() -> {
+                Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
+            });
+        });
     }
 }
