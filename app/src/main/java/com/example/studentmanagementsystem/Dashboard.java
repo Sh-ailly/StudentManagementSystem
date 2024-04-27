@@ -71,6 +71,26 @@ public class Dashboard extends AppCompatActivity {
                     Intent intent = new Intent(Dashboard.this, FeesStructurepageActivity.class);
                     startActivity(intent);
                 }
+                else if(id==R.id.nav_assignment)
+                {
+                    Intent intent = new Intent(Dashboard.this, AttendancepageActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==R.id.nav_grade)
+                {
+                    Intent intent = new Intent(Dashboard.this, GradepageActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==R.id.nav_attendance)
+                {
+                    Intent intent = new Intent(Dashboard.this, AttendancepageActivity.class);
+                    startActivity(intent);
+                }
+                else if(id==R.id.nav_holidays)
+                {
+                    Intent intent = new Intent(Dashboard.this, HolidaypageActivity.class);
+                    startActivity(intent);
+                }
                 return true;
 
             }
