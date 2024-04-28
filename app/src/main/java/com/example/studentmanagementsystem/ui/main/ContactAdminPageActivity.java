@@ -13,8 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.*;
 
-public class Contact_Admin_Page extends AppCompatActivity {
-ImageView back;
+public class ContactAdminPageActivity extends AppCompatActivity {
+    ImageView back;
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +22,12 @@ ImageView back;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_contact_admin_page);
+        setContentView(R.layout.contact_admin_page);
         back=(ImageView)findViewById(R.id.backbuttonimage);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Contact_Admin_Page.this, MainActivity.class);
+                Intent intent=new Intent(ContactAdminPageActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

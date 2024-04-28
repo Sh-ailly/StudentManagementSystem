@@ -14,8 +14,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.studentmanagementsystem.ui.main.Contact_Admin_Page;
-
 public class MyprofilepageActivity extends AppCompatActivity {
 ImageView back;
     @SuppressLint("MissingInflatedId")

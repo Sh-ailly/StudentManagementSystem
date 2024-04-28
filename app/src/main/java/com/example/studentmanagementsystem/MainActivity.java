@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.studentmanagementsystem.ui.main.Contact_Admin_Page;
+import com.example.studentmanagementsystem.ui.main.ContactAdminPageActivity;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         contact_admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Contact_Admin_Page.class);
+                Intent intent = new Intent(MainActivity.this, ContactAdminPageActivity.class);
                 startActivity(intent);
             }
         });
