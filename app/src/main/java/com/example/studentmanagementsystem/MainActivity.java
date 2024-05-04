@@ -9,13 +9,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.studentmanagementsystem.ui.main.ContactAdminPageActivity;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -23,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
     ConnectionClass connectionClass;
     Connection con;
     ResultSet rs;
-    String str;
+    String name, str;
     Button login;
     TextView contact_admin;
+    EditText username, password;
+    public String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +65,21 @@ public class MainActivity extends AppCompatActivity {
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
-
-                if (con == null) {
-                    str = "Error in connection";
-                } else {
-                    str = "Connection success";
+                    username=findViewById(R.id.editTextTextPersonName);
+                    password=findViewById(R.id.editTextTextPassword);
+                    user=username.getText().toString();
+                    String pass=password.getText().toString();
+                    if(validateLogin(user,pass))
+                    {
                     // Start the Dashboard activity upon successful connection
                     Intent intent = new Intent(MainActivity.this, Dashboard.class);
                     startActivity(intent);
-                }
+                        str="Valid Login";
+                    }
+                    else
+                    {
+                        str="Invalid Login";
+                    }
             } catch (Exception e) {
                 // Log the exception for debugging purposes
                 Log.e("Database Connection", "Error connecting to database", e);
@@ -78,5 +89,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
             });
         });
+    }
+    private boolean validateLogin(String username, String password)
+    {
+        try{
+            String query="SELECT * FROM login WHERE Roll_no=? AND Password=?";
+            PreparedStatement statement=con.prepareStatement(query);
+            statement.setString(1,username);
+            statement.setString(2,password);
+            rs= statement.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
