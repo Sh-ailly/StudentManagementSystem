@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AgiLoginActivity extends AppCompatActivity {
-Button student;
+Button student,admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,14 @@ Button student;
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AgiLoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        admin = findViewById(R.id.button1);
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AgiLoginActivity.this, AdminpanelActivity.class);
                 startActivity(intent);
             }
         });
