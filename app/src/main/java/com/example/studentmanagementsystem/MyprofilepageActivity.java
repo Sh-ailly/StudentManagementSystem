@@ -2,6 +2,7 @@ package com.example.studentmanagementsystem;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MyprofilepageActivity extends AppCompatActivity {
     ResultSet rs;
     String str,name1;
     TextView name;
+    String fullName;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +58,15 @@ public class MyprofilepageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        connectionClass = new ConnectionClass();
+
+        connect();
     }
     public void connect() {
-        String user=main.user;
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        main=new MainActivity();
+
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String user = preferences.getString("user", "defaultUser");        ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
@@ -70,21 +77,24 @@ public class MyprofilepageActivity extends AppCompatActivity {
                 if (rs.next()) {
                     String firstName = rs.getString("First_name");
                     String lastName = rs.getString("Last_name");
-                    String fullName = firstName + " " + lastName;
-                    runOnUiThread(() -> {
-                        Toast.makeText(MyprofilepageActivity.this,fullName, Toast.LENGTH_SHORT).show(); // Set the full name in the UI thread
-                    });
-                    name=findViewById(R.id.textView9);
+                    fullName = firstName + " " + lastName;
+                    TextView name = findViewById(R.id.textView9);
                     name.setText(fullName);
+                   // runOnUiThread(() -> {
+                    //    Toast.makeText(MyprofilepageActivity.this, fullName, Toast.LENGTH_SHORT).show();
+                    //});
+                } else {
+                    runOnUiThread(() -> {
+                        Toast.makeText(MyprofilepageActivity.this, "No data found for the user", Toast.LENGTH_SHORT).show();
+                    });
                 }
             } catch (Exception e) {
                 // Log the exception for debugging purposes
                 Log.e("Database Connection", "Error connecting to database", e);
-                str = "Error in connection";
+                runOnUiThread(() -> {
+                    Toast.makeText(MyprofilepageActivity.this, "Error in connection", Toast.LENGTH_SHORT).show();
+                });
             }
-            runOnUiThread(() -> {
-                Toast.makeText(MyprofilepageActivity.this,name1, Toast.LENGTH_SHORT).show();
-            });
         });
     }
 }

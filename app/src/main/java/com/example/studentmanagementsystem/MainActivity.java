@@ -3,6 +3,7 @@ package com.example.studentmanagementsystem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                     String pass=password.getText().toString();
                     if(validateLogin(user,pass))
                     {
+                        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("user", user);
+                        editor.apply();
                     // Start the Dashboard activity upon successful connection
                     Intent intent = new Intent(MainActivity.this, Dashboard.class);
                     startActivity(intent);
