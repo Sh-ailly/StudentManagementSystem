@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.studentmanagementsystem.ui.main.ContactAdminPageActivity;
+import com.example.studentmanagementsystem.ContactAdminPageActivity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

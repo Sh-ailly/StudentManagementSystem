@@ -14,6 +14,9 @@
         android:theme="@style/Theme.StudentManagementSystem"
         tools:targetApi="31">
         <activity
+            android:name=".ContactAdminPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".AgiLoginActivity"
             android:exported="false" />
         <activity

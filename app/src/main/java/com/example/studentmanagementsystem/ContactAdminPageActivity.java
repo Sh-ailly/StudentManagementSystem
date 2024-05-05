@@ -1,4 +1,4 @@
-package com.example.studentmanagementsystem.ui.main;
+package com.example.studentmanagementsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
