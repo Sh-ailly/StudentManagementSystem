@@ -70,7 +70,7 @@ public class Dashboard extends AppCompatActivity {
                 }
                 else if(id==R.id.nav_assignment)
                 {
-                    Intent intent = new Intent(Dashboard.this, AttendancepageActivity.class);
+                    Intent intent = new Intent(Dashboard.this, AssignmentPageActivity.class);
                     startActivity(intent);
                 }
                 else if(id==R.id.nav_grade)

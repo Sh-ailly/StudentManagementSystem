@@ -11,8 +11,6 @@ public class ConnectionClass {
     protected static String port = "3306";
     protected static String username = "root";
     protected static String password = "password";
-    protected static String ip = "10.0.2.2";
-
     private Exception lastException;
 
     public Connection CONN() {
@@ -22,7 +20,9 @@ public class ConnectionClass {
             Class.forName("com.mysql.jdbc.Driver");
 
             // Construct the URL for the database connection
-            String url = "jdbc:mysql://"+ip+":"+port+"/"+db;
+            String url = "jdbc:mysql://"+hostname+":"+port+"/"+db;
+
+            Log.d("CONNECTION_INFO", "Connecting to database: " + url);
 
             // Attempt to establish the database connection
             conn = DriverManager.getConnection(url, username, password);
