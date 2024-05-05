@@ -70,7 +70,7 @@ public class MyprofilepageActivity extends AppCompatActivity {
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
-                String query = "SELECT First_name, Last_name FROM Student WHERE Roll_no=?";
+                String query = "SELECT First_name, Last_name, Roll_no,DOB, Branch, Gender, Department, Phone_no, Email FROM Student WHERE Roll_no=?";
                 PreparedStatement statement = con.prepareStatement(query);
                 statement.setString(1, user);
                 rs = statement.executeQuery();
@@ -80,6 +80,23 @@ public class MyprofilepageActivity extends AppCompatActivity {
                     fullName = firstName + " " + lastName;
                     TextView name = findViewById(R.id.textView9);
                     name.setText(fullName);
+                    TextView roll= findViewById(R.id.textView21);
+                    String rollno=rs.getString("Roll_no");
+                    roll.setText(rollno);
+                    TextView DOB=findViewById(R.id.textView36);
+                    DOB.setText(rs.getString("DOB"));
+                    TextView phone=findViewById(R.id.textView39);
+                    phone.setText(rs.getString("Phone_no"));
+                    TextView email=findViewById(R.id.textView41);
+                    email.setText(rs.getString("Email"));
+                    TextView Course=findViewById(R.id.textView10);
+                    String main_course;
+                    String department=rs.getString("Department");
+                    String branch=rs.getString("Branch");
+                    main_course=department+" "+branch;
+                    Course.setText(main_course);
+                    TextView gender=findViewById(R.id.textView33);
+                    gender.setText(rs.getString("Gender"));
                    // runOnUiThread(() -> {
                     //    Toast.makeText(MyprofilepageActivity.this, fullName, Toast.LENGTH_SHORT).show();
                     //});

@@ -66,25 +66,25 @@ public class MainActivity extends AppCompatActivity {
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
-                    username=findViewById(R.id.editTextTextPersonName);
-                    password=findViewById(R.id.editTextTextPassword);
-                    user=username.getText().toString();
-                    String pass=password.getText().toString();
-                    if(validateLogin(user,pass))
-                    {
-                        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("user", user);
-                        editor.apply();
+                username=findViewById(R.id.editTextTextPersonName);
+                password=findViewById(R.id.editTextTextPassword);
+                user=username.getText().toString();
+                String pass=password.getText().toString();
+                if(validateLogin(user,pass))
+                {
+                    SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("user", user);
+                    editor.apply();
                     // Start the Dashboard activity upon successful connection
                     Intent intent = new Intent(MainActivity.this, Dashboard.class);
                     startActivity(intent);
-                        str="Valid Login";
-                    }
-                    else
-                    {
-                        str="Invalid Login";
-                    }
+                    str="Valid Login";
+                }
+                else
+                {
+                    str="Invalid Login";
+                }
             } catch (Exception e) {
                 // Log the exception for debugging purposes
                 Log.e("Database Connection", "Error connecting to database", e);
