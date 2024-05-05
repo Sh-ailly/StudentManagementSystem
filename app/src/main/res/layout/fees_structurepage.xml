@@ -80,16 +80,54 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/Total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/to_be_paid"
+                android:text="Total Fees"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/_0_00"
+                android:textColor="#E65100"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Paid_Fees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Paid Fees"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/_0_00"
+                android:textColor="#E65100"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Unpaid_fees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Unpaid Fees"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -104,7 +142,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="190dp"
                 android:layout_marginEnd="120dp"
                 android:background="@color/app_theme"
                 android:text="@string/deposit_fee"
