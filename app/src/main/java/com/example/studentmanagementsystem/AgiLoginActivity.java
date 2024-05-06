@@ -34,7 +34,7 @@ Button student,admin;
             }
         });
         admin = findViewById(R.id.button1);
-        student.setOnClickListener(new View.OnClickListener() {
+        admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AgiLoginActivity.this, AdminpanelActivity.class);
