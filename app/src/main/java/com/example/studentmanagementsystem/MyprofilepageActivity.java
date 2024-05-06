@@ -70,7 +70,7 @@ public class MyprofilepageActivity extends AppCompatActivity {
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
-                String query = "SELECT First_name, Last_name, Roll_no,DOB, City, Branch, Gender, Department, Phone_no, Email FROM Student WHERE Roll_no=?";
+                String query = "SELECT First_name, Last_name, Roll_no,DOB, City, Branch, Gender, Department, Phone_no, Email, Blood_Group, Admission_No FROM Student WHERE Roll_no=?";
                 PreparedStatement statement = con.prepareStatement(query);
                 statement.setString(1, user);
                 rs = statement.executeQuery();
@@ -99,6 +99,10 @@ public class MyprofilepageActivity extends AppCompatActivity {
                     gender.setText(rs.getString("Gender"));
                     TextView city=findViewById(R.id.textView47);
                     city.setText(rs.getString("City"));
+                    TextView blood_group=findViewById(R.id.textView31);
+                    blood_group.setText(rs.getString("Blood_Group"));
+                    TextView admission_no=findViewById(R.id.textView20);
+                    admission_no.setText(rs.getString("Admission_No"));
                    // runOnUiThread(() -> {
                     //    Toast.makeText(MyprofilepageActivity.this, fullName, Toast.LENGTH_SHORT).show();
                     //});

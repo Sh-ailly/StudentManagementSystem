@@ -145,7 +145,7 @@ public class Dashboard extends AppCompatActivity {
         executorService.execute(() -> {
             try {
                 con = connectionClass.CONN(); // Assuming this method establishes the database connection
-                String query = "SELECT First_name, Last_name, Email, Profile_Image FROM Student WHERE Roll_no=?";
+                String query = "SELECT First_name, Last_name, Email FROM Student WHERE Roll_no=?";
                 PreparedStatement statement = con.prepareStatement(query);
                 statement.setString(1, user);
                 rs = statement.executeQuery();
